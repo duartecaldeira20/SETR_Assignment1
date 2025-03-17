@@ -1,6 +1,7 @@
 // Implementation of the MYDLLInsert Function
 #include "dll.h"
 #include <stdlib.h>
+#include <string.h> 
 
 int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data){
       if (list == NULL || list->count >= list->max_elements) {
@@ -18,12 +19,12 @@ int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data){
     }
     memcpy(new_node->data, data, list->element_size);
 
-    // Inicializar o novo nó
+    // Inicializa o novo nó
     new_node->key = key;
     new_node->prev = NULL;
     new_node->next = list->head;
 
-    // Ajustar os ponteiros da lista
+    // Ajusta os ponteiros da lista
     if (list->head != NULL) {
         list->head->prev = new_node;
     }
