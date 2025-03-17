@@ -22,11 +22,11 @@ typedef struct {
 } DoublyLinkedList;
 
 // Funções da DLL
-void MyDLLInit(DoublyLinkedList *list, size_t max_elements, size_t element_size);
-int MyDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data);
-int MyDLLRemove(DoublyLinkedList *list, uint16_t key);
-unsigned char *MyDLLFind(DoublyLinkedList *list, uint16_t key);
-unsigned char *MyDLLFindNext(DoublyLinkedList *list, uint16_t key);
-unsigned char *MyDLLFindPrevious(DoublyLinkedList *list, uint16_t key);
+void MYDLLInit(DoublyLinkedList *list, size_t max_elements, size_t element_size);
+int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data);
+int MYDLLRemove(DoublyLinkedList *list, uint16_t key);
+unsigned char *MYDLLFind(DoublyLinkedList *list, uint16_t key);
+unsigned char *MYDLLFindNext(DoublyLinkedList *list, uint16_t key);
+unsigned char *MYDLLFindPrevious(DoublyLinkedList *list, uint16_t key);
 
 #endif
