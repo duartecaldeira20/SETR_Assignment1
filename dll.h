@@ -32,6 +32,7 @@ typedef struct
     DLL_Node *head;
     DLL_Node *tail;
     int size;
+    int maxElements;
     
 } DoublyLinkedList;
 
