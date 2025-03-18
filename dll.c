@@ -189,7 +189,8 @@ unsigned char* MYDLLFindPrevious(DoublyLinkedList *list, uint16_t key)
     
     while (currentNode != NULL) 
     {
-        if (currentNode->key == key) 
+        if (currentNode->key == key)
+        { 
         
             break;                      
         }
