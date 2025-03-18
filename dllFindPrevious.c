@@ -10,7 +10,7 @@ unsigned char* MyDLLFindPrevious(DoublyLinkedList* list, uint16_t key)
     
     while (currentNode != NULL) 
     {
-        if (currentNode->key == currentId) 
+        if (currentNode->key == key) 
         
             break;                      
         }
@@ -23,10 +23,10 @@ unsigned char* MyDLLFindPrevious(DoublyLinkedList* list, uint16_t key)
         return NULL;                    
     }
     
-    if (currentNode->prev == NULL) 
-    {
-        return NULL;                    
-    }
+	if (currentNode->prev == NULL || !currentNode->prev->occupied) 
+	{
+		return NULL;
+	}
     
     return currentNode->prev->data;     
 }

@@ -1,7 +1,7 @@
 unsigned char *MYDLLFindNext(DoublyLinkedList *list, uint16_t key) 
 {
 	
-	if (lsit->size == 0) 
+	if (list->size == 0) 
 	{               
         return NULL;
     }
@@ -10,7 +10,7 @@ unsigned char *MYDLLFindNext(DoublyLinkedList *list, uint16_t key)
     
     while (currentNode != NULL) 
     {
-        if (currentNode->key == currentKey) 
+        if (currentNode->key == key) 
         {
             break;                      
         }
@@ -23,10 +23,10 @@ unsigned char *MYDLLFindNext(DoublyLinkedList *list, uint16_t key)
         return NULL;                    
     }
 
-    if (currentNode->next == NULL) 
+    if (currentNode->next == NULL || !currentNode->next->occupied) 
     {
-        return NULL;                    
-    }
+		return NULL;
+	}
 
     return currentNode->next->data;     
 }

@@ -1,38 +1,58 @@
 // Implementation of the MYDLLInsert Function
-#include "dll.h"
-#include <stdlib.h>
-#include <string.h> 
 
-int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data){
-      if (list == NULL || list->count >= list->max_elements) {
-        return -1; // Retorna erro se a lista for nula ou se atingiu o limite de elementos maximo 
+int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int dataSize) 
+{
+    if (list->size >= MAX_ELEMENTS) 
+    {
+        printf("The list is full.\n");
+        
+        return DLL_FULL;                      
     }
 
-    // Alocar memória para o novo nó
-    DLL_Node* new_node = (DLL_Node*)malloc(sizeof(DLL_Node));
-
-    // Alocar memória para os dados e copiá-los
-    new_node->data = (unsigned char*)malloc(list->element_size);
-    if (new_node->data == NULL) {
-        free(new_node);
-        return -3;
-    }
-    memcpy(new_node->data, data, list->element_size);
-
-    // Inicializa o novo nó
-    new_node->key = key;
-    new_node->prev = NULL;
-    new_node->next = list->head;
-
-    // Ajusta os ponteiros da lista
-    if (list->head != NULL) {
-        list->head->prev = new_node;
-    }
-    list->head = new_node;
-    if (list->tail == NULL) {
-        list->tail = new_node;
+    DLL_Node *newNode = NULL;
+    
+    for (int i = 0; i < MAX_ELEMENTS; i++) 
+    {
+        if (!list->nodes[i].occupied) 
+        {   
+            newNode = &list->nodes[i];
+            break;                      
+        }
     }
 
-    list->count++;
-    return 0; // Inserção bem-sucedida
+    if (newNode == NULL) 
+    {
+        printf("No empty node found.\n");
+        return NO_EMPTY_NODE;                      
+    }
+
+    newNode->key = key;
+    
+    int copySize = (dataSize > ELEMENT_SIZE) ? ELEMENT_SIZE : dataSize;
+    
+    for (int i = 0; i < copySize; i++) 
+    {
+        newNode->data[i] = data[i];
+    }
+    
+    newNode->occupied = true;            
+
+    newNode->prev = list->tail;
+    newNode->next = NULL;
+    
+    if (list->tail != NULL) 
+    {
+        list->tail->next = newNode;
+    }
+    
+    list->tail = newNode;
+    
+    if (list->head == NULL) 
+    {
+        list->head = newNode;
+    }
+
+    list->size++;
+    
+    return OK;                           
 }
