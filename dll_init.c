@@ -1,13 +1,17 @@
 // Implementation of the MYDLLInit Function
-#include "dll.h"
-#include <stdlib.h>
 
-void MYDLLInit(DoublyLinkedList* list, size_t max_elements, size_t element_size) {
-    if (list == NULL) return;
-
-    list->head = NULL;
-    list->tail = NULL;
-    list->count = 0;  
-    list->max_elements = max_elements;
-    list->element_size = element_size;
+void MYDLLInit(DoublyLinkedList *list, int maxElements, int elementSize)
+{
+	list->size = 0;
+	list->head = NULL;
+	list->tail = NULL;
+	list->maxElements = maxElements;
+	
+	for(int i = 0; i < maxElements; i++)
+	{
+		list->nodes[i].next = NULL;
+		list->nodes[i].prev = NULL;
+		list->nodes[i].occupied = false;
+	}
+	
 }

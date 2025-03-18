@@ -6,7 +6,7 @@ unsigned char *MYDLLFindNext(DoublyLinkedList *list, uint16_t key)
         return NULL;
     }
 
-    DLL_Node* currentNode = list->head;
+    DLL_Node *currentNode = list->head;
     
     while (currentNode != NULL) 
     {
