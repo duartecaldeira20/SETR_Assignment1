@@ -4,21 +4,23 @@
 
 void MYDLLInit(DoublyLinkedList *list, int maxElements, int elementSize)
 {
-	list->size = 0;							// size of list = 0;
-	list->head = NULL;						// 
-	list->tail = NULL;
-	list->maxElements = maxElements;
+	list->size = 0;							// inicializa o tamanho da lista como 0
+	list->head = NULL;						// init ponteiro para o inicio da lista
+	list->tail = NULL;						// init ponteiro para fim da lista
+	list->maxElements = maxElements;		// define o nr max de elementos
+	
+	// init todos os nodes como n ocupados
 	
 	for(int i = 0; i < maxElements; i++)
 	{
-		list->nodes[i].next = NULL;
-		list->nodes[i].prev = NULL;
-		list->nodes[i].occupied = false;
+		list->nodes[i].next = NULL;			// init ponteiro do prox node
+		list->nodes[i].prev = NULL;			// init ponteiro do prev node
+		list->nodes[i].occupied = false; 	// marca o node como n ocupado
 	}
 	
 }
 
-// Implementation of the MYDLLInsert Function
+
 
 int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int dataSize) 
 {
@@ -77,11 +79,11 @@ int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int d
     return OK;                           
 }
 
-
+// função para remover nó com chave específica
 
 int MYDLLRemove(DoublyLinkedList *list, uint16_t key)
 {
-	DLL_Node *current = list->head;
+	DLL_Node *current = list->head;						// 
 	
     while (current != NULL && current->key != key) 
     {
