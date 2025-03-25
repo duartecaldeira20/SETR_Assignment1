@@ -1,9 +1,10 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "dll.h"
 
 void MYDLLInit(DoublyLinkedList *list, int maxElements, int elementSize)
 {
+
 	list->size = 0;							
 	list->head = NULL;						
 	list->tail = NULL;						
@@ -14,9 +15,11 @@ void MYDLLInit(DoublyLinkedList *list, int maxElements, int elementSize)
 		list->nodes[i].next = NULL;			
 		list->nodes[i].prev = NULL;			
 		list->nodes[i].occupied = false; 	
+
 	}
 	
 }
+
 
 int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int dataSize) 
 {
@@ -34,7 +37,7 @@ int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int d
         if (!list->nodes[i].occupied) 
         {   
             newNode = &list->nodes[i];
-            
+
             break;                      
         }
     }
@@ -79,7 +82,7 @@ int MYDLLInsert(DoublyLinkedList *list, uint16_t key, unsigned char *data, int d
 
 int MYDLLRemove(DoublyLinkedList *list, uint16_t key)
 {
-	DLL_Node *current = list->head;						// 
+	DLL_Node *current = list->head;						
 	
     while (current != NULL && current->key != key) 
     {
@@ -189,6 +192,7 @@ unsigned char* MYDLLFindPrevious(DoublyLinkedList *list, uint16_t key)
     {
         if (currentNode->key == key)
         { 
+
             break;                      
         }
         
