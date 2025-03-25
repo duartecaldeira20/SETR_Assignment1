@@ -1,0 +1,160 @@
+\hypertarget{dll_8c}{}\doxysection{Lib\+Folder/dll.c File Reference}
+\label{dll_8c}\index{LibFolder/dll.c@{LibFolder/dll.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dll.\+h\char`\"{}}\newline
+Include dependency graph for dll.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dll_8c_aee5534520b9be2dcea96fab15ef721c9}{M\+Y\+D\+L\+L\+Init}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, int max\+Elements, int element\+Size)
+\begin{DoxyCompactList}\small\item\em Initializes the D\+LL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dll_8c_a08b9ed274ea89df307ae4f2613e31033}{M\+Y\+D\+L\+L\+Insert}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, uint16\+\_\+t key, unsigned char $\ast$data, int data\+Size)
+\begin{DoxyCompactList}\small\item\em Inserts a new element into the D\+LL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dll_8c_a9ac02329a65e4e3723e6818929977dbe}{M\+Y\+D\+L\+L\+Remove}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, uint16\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Removes an element from the D\+LL. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \mbox{\hyperlink{dll_8c_af5b59179992a6f231ff5faf3c9a49077}{M\+Y\+D\+L\+L\+Find}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, uint16\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Finds an element in the D\+LL by key. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \mbox{\hyperlink{dll_8c_acded43a0d82272a9c847b5aa303f7d52}{M\+Y\+D\+L\+L\+Find\+Next}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, uint16\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Finds the next element in the list after a given key. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \mbox{\hyperlink{dll_8c_abbead51810bf65d1527dd8efae3b4966}{M\+Y\+D\+L\+L\+Find\+Previous}} (\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$list, uint16\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em Finds the previous element in the list before a given key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dll_8c_af5b59179992a6f231ff5faf3c9a49077}\label{dll_8c_af5b59179992a6f231ff5faf3c9a49077}} 
+\index{dll.c@{dll.c}!MYDLLFind@{MYDLLFind}}
+\index{MYDLLFind@{MYDLLFind}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLFind()}{MYDLLFind()}}
+{\footnotesize\ttfamily unsigned char$\ast$ M\+Y\+D\+L\+L\+Find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{uint16\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Finds an element in the D\+LL by key. 
+
+Iterates through the list until the matching key is found and returns the stored data. If the key is not found, returns N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em key} & Unique key of the element to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the data if found, N\+U\+LL otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dll_8c_acded43a0d82272a9c847b5aa303f7d52}\label{dll_8c_acded43a0d82272a9c847b5aa303f7d52}} 
+\index{dll.c@{dll.c}!MYDLLFindNext@{MYDLLFindNext}}
+\index{MYDLLFindNext@{MYDLLFindNext}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLFindNext()}{MYDLLFindNext()}}
+{\footnotesize\ttfamily unsigned char$\ast$ M\+Y\+D\+L\+L\+Find\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{uint16\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Finds the next element in the list after a given key. 
+
+The function searches for the current element using the provided ID. If the element is found, it checks whether a next element exists in the list. If there is a next element, the function returns its associated data. If the current element is the last in the list or the provided ID does not match any existing element, the function returns N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em key} & Unique key of the current element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the data of the next element, or N\+U\+LL if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dll_8c_abbead51810bf65d1527dd8efae3b4966}\label{dll_8c_abbead51810bf65d1527dd8efae3b4966}} 
+\index{dll.c@{dll.c}!MYDLLFindPrevious@{MYDLLFindPrevious}}
+\index{MYDLLFindPrevious@{MYDLLFindPrevious}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLFindPrevious()}{MYDLLFindPrevious()}}
+{\footnotesize\ttfamily unsigned char$\ast$ M\+Y\+D\+L\+L\+Find\+Previous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{uint16\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Finds the previous element in the list before a given key. 
+
+The function locates the current element using the given ID. If the element is found, it determines whether a previous element exists in the list. If a previous element is found, the function returns its associated data. If the current element is the first in the list or the provided ID does not correspond to any existing element, the function returns N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em key} & Unique key of the current element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the data of the previous element, or N\+U\+LL if not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dll_8c_aee5534520b9be2dcea96fab15ef721c9}\label{dll_8c_aee5534520b9be2dcea96fab15ef721c9}} 
+\index{dll.c@{dll.c}!MYDLLInit@{MYDLLInit}}
+\index{MYDLLInit@{MYDLLInit}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLInit()}{MYDLLInit()}}
+{\footnotesize\ttfamily void M\+Y\+D\+L\+L\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{int}]{max\+Elements,  }\item[{int}]{element\+Size }\end{DoxyParamCaption})}
+
+
+
+Initializes the D\+LL. 
+
+This function sets up the initial values of the list, setting the size to 0, the head and tail pointers to N\+U\+LL, and marking all nodes as unoccupied.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em max\+Elements} & Maximum number of elements the list can hold. \\
+\hline
+{\em element\+Size} & Size of each element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dll_8c_a08b9ed274ea89df307ae4f2613e31033}\label{dll_8c_a08b9ed274ea89df307ae4f2613e31033}} 
+\index{dll.c@{dll.c}!MYDLLInsert@{MYDLLInsert}}
+\index{MYDLLInsert@{MYDLLInsert}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLInsert()}{MYDLLInsert()}}
+{\footnotesize\ttfamily int M\+Y\+D\+L\+L\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{uint16\+\_\+t}]{key,  }\item[{unsigned char $\ast$}]{data,  }\item[{int}]{data\+Size }\end{DoxyParamCaption})}
+
+
+
+Inserts a new element into the D\+LL. 
+
+Finds a free node, copies the data, and adjusts the pointers to insert the new element. If the list is full, it returns an error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em key} & Unique key for the new element. \\
+\hline
+{\em data} & Pointer to the data to be stored. \\
+\hline
+{\em data\+Size} & Size of the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, D\+L\+L\+\_\+\+F\+U\+LL if the list is full, N\+O\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+N\+O\+DE if no empty node is available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dll_8c_a9ac02329a65e4e3723e6818929977dbe}\label{dll_8c_a9ac02329a65e4e3723e6818929977dbe}} 
+\index{dll.c@{dll.c}!MYDLLRemove@{MYDLLRemove}}
+\index{MYDLLRemove@{MYDLLRemove}!dll.c@{dll.c}}
+\doxysubsubsection{\texorpdfstring{MYDLLRemove()}{MYDLLRemove()}}
+{\footnotesize\ttfamily int M\+Y\+D\+L\+L\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDoublyLinkedList}{Doubly\+Linked\+List}} $\ast$}]{list,  }\item[{uint16\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+Removes an element from the D\+LL. 
+
+Finds the node corresponding to the given key, adjusts the pointers to remove it, and marks the node as available for reuse.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the doubly linked list. \\
+\hline
+{\em key} & Unique key of the element to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, K\+E\+Y\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND if the key does not exist. 
+\end{DoxyReturn}

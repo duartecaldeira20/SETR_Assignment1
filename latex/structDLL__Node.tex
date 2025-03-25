@@ -1,0 +1,71 @@
+\hypertarget{structDLL__Node}{}\doxysection{D\+L\+L\+\_\+\+Node Struct Reference}
+\label{structDLL__Node}\index{DLL\_Node@{DLL\_Node}}
+
+
+Structure representing a node in the doubly linked list.  
+
+
+
+
+{\ttfamily \#include $<$dll.\+h$>$}
+
+
+
+Collaboration diagram for D\+L\+L\+\_\+\+Node\+:
+% FIG 0
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structDLL__Node_a8d745881a5c51d5d2058adff8ca8f297}{key}}
+\item 
+unsigned char \mbox{\hyperlink{structDLL__Node_a54aad4477df9ee2f87586cc768424b3d}{data}} \mbox{[}\mbox{\hyperlink{src_2dll_8h_afbf7eb32266433cead9d5dac419643c0}{E\+L\+E\+M\+E\+N\+T\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+struct \mbox{\hyperlink{structDLL__Node}{D\+L\+L\+\_\+\+Node}} $\ast$ \mbox{\hyperlink{structDLL__Node_a8dc610a386aeb478c9b965811a9bf033}{prev}}
+\item 
+struct \mbox{\hyperlink{structDLL__Node}{D\+L\+L\+\_\+\+Node}} $\ast$ \mbox{\hyperlink{structDLL__Node_abc028edc4e9b17b79c2b273bb564f90f}{next}}
+\item 
+bool \mbox{\hyperlink{structDLL__Node_aeebfbb36379af788c29ff9e3707252ca}{occupied}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a node in the doubly linked list. 
+
+This structure defines an individual node within the list. Each node contains a unique key, stored data and pointers to the previous and next nodes in the sequence. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structDLL__Node_a54aad4477df9ee2f87586cc768424b3d}\label{structDLL__Node_a54aad4477df9ee2f87586cc768424b3d}} 
+\index{DLL\_Node@{DLL\_Node}!data@{data}}
+\index{data@{data}!DLL\_Node@{DLL\_Node}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily unsigned char D\+L\+L\+\_\+\+Node\+::data}
+
+Data stored in the node. \mbox{\Hypertarget{structDLL__Node_a8d745881a5c51d5d2058adff8ca8f297}\label{structDLL__Node_a8d745881a5c51d5d2058adff8ca8f297}} 
+\index{DLL\_Node@{DLL\_Node}!key@{key}}
+\index{key@{key}!DLL\_Node@{DLL\_Node}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily uint16\+\_\+t D\+L\+L\+\_\+\+Node\+::key}
+
+Unique key identifier for the node. \mbox{\Hypertarget{structDLL__Node_abc028edc4e9b17b79c2b273bb564f90f}\label{structDLL__Node_abc028edc4e9b17b79c2b273bb564f90f}} 
+\index{DLL\_Node@{DLL\_Node}!next@{next}}
+\index{next@{next}!DLL\_Node@{DLL\_Node}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structDLL__Node}{D\+L\+L\+\_\+\+Node}} $\ast$ D\+L\+L\+\_\+\+Node\+::next}
+
+Pointer to the next node. \mbox{\Hypertarget{structDLL__Node_aeebfbb36379af788c29ff9e3707252ca}\label{structDLL__Node_aeebfbb36379af788c29ff9e3707252ca}} 
+\index{DLL\_Node@{DLL\_Node}!occupied@{occupied}}
+\index{occupied@{occupied}!DLL\_Node@{DLL\_Node}}
+\doxysubsubsection{\texorpdfstring{occupied}{occupied}}
+{\footnotesize\ttfamily bool D\+L\+L\+\_\+\+Node\+::occupied}
+
+Flag to indicate if the node is in use. \mbox{\Hypertarget{structDLL__Node_a8dc610a386aeb478c9b965811a9bf033}\label{structDLL__Node_a8dc610a386aeb478c9b965811a9bf033}} 
+\index{DLL\_Node@{DLL\_Node}!prev@{prev}}
+\index{prev@{prev}!DLL\_Node@{DLL\_Node}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structDLL__Node}{D\+L\+L\+\_\+\+Node}} $\ast$ D\+L\+L\+\_\+\+Node\+::prev}
+
+Pointer to the previous node. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Lib\+Folder/\mbox{\hyperlink{LibFolder_2dll_8h}{dll.\+h}}\end{DoxyCompactItemize}

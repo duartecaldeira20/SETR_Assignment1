@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLibFolder.a  CMakeFiles/LibFolder.dir/dll.c.o
+/usr/bin/ranlib libLibFolder.a

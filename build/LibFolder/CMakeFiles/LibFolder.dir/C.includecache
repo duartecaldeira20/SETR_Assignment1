@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/duartescaldeira/SETR_Assignment1/LibFolder/dll.c
+stdlib.h
+-
+stdio.h
+-
+dll.h
+/home/duartescaldeira/SETR_Assignment1/LibFolder/dll.h
+
+/home/duartescaldeira/SETR_Assignment1/LibFolder/dll.h
+stdint.h
+-
+stddef.h
+-
+stdbool.h
+-
+

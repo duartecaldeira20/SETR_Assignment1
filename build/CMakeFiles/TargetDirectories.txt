@@ -1,0 +1,6 @@
+/home/duartescaldeira/SETR_Assignment1/build/CMakeFiles/rebuild_cache.dir
+/home/duartescaldeira/SETR_Assignment1/build/CMakeFiles/edit_cache.dir
+/home/duartescaldeira/SETR_Assignment1/build/CMakeFiles/main.dir
+/home/duartescaldeira/SETR_Assignment1/build/LibFolder/CMakeFiles/rebuild_cache.dir
+/home/duartescaldeira/SETR_Assignment1/build/LibFolder/CMakeFiles/edit_cache.dir
+/home/duartescaldeira/SETR_Assignment1/build/LibFolder/CMakeFiles/LibFolder.dir
